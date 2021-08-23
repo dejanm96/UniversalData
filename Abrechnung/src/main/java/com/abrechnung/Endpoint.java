@@ -4,21 +4,47 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
 
 @RestController
 public class Endpoint {
-
+	@CrossOrigin
 	@RequestMapping(value = "/anfang", method = RequestMethod.GET, produces = "application/json")
-	public List<ValueOfArtikles> anfangstand() throws NumberFormatException, IOException, ParseException {
-		ReadCSV readCSV = new ReadCSV();
+	public String anfangstand() throws NumberFormatException, IOException, ParseException {
+		ReadFullCSV readCSV = new ReadFullCSV();
+		
+		List<ValueOfArtikles> list = readCSV.readCSVFile();
+		
+		JSONArray object = new JSONArray();
+		
+		for(ValueOfArtikles each : list) {
+			JSONObject obj = new JSONObject();
+			obj.put("BZ", each.getRoom());
+			obj.put("Artikel", each.getGDID());
+			obj.put("Flasche", each.getBottle());
+			obj.put("Einheit", each.getDoseValue());
+			
+			object.put(obj); 
+		}
+			
+		
+		return object.toString();
 		
 		
-		return readCSV.runThis();
-		
-		
+	}
+	
+	@RequestMapping("/")
+	public ModelAndView index () {
+	    ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.setViewName("frontend.html");
+	    return modelAndView;
 	}
 	
 	

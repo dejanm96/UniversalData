@@ -23,12 +23,5 @@ public class KellnerCSV {
 
 	public void setArtikelName(String artikelName) {
 		this.artikelName = artikelName;
-	}
-
-	@Override
-	public String toString() {
-		return "GDID=" + GDID + ", artikelName=" + artikelName;
-	}
-	
-	
+	}	
 }

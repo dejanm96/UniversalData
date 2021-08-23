@@ -2,18 +2,19 @@ package com.abrechnung.empty;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import com.abrechnung.ValueOfArtikles;
-import com.abrechnung.XmlEdit;
 
 public class GetEmptyCSV {
 	
-	public void loadEmptyCSV() {
+	public void loadEmptyCSV() throws NumberFormatException, IOException, ParseException {
 		List<ValueOfArtikles> anfang = new ArrayList<>();
 		
 		FileInputStream fileInputStream = new FileInputStream("C:\\Users\\Dejan\\Desktop\\CSV\\inventur.csv");
@@ -30,7 +31,6 @@ public class GetEmptyCSV {
 			if (lines == 1) {
 				continue;
 			} else {
-				XmlEdit column = new XmlEdit();
 				
 				Integer GDID = Integer.parseInt(columns[0]);
 				Integer bottles = Integer.parseInt(columns[3]);
@@ -38,13 +38,6 @@ public class GetEmptyCSV {
 				NumberFormat format = NumberFormat.getInstance(Locale.getDefault());
 				Number number = format.parse((columns[4]));
 				Double doseValue = number.doubleValue();
-				
-				
-				column.setGDID(GDID);
-				column.setRaum(columns[1]);
-				column.setMengeKisten(Integer.parseInt(columns[2]));
-				column.setMengeFlaschen(bottles);
-				column.setMengeEinheit(doseValue);
 	
 			}
 		}

@@ -2,14 +2,16 @@ package com.abrechnung;
 
 public class ValueOfArtikles {
 
+	private String room;
 	private String GDID;
 	private Integer bottle;
 	private Double doseValue;
 	
 	public ValueOfArtikles() {  }
 	
-	public ValueOfArtikles(String Name, Integer bottle, Double doseValue) {
-		this.GDID = Name;
+	public ValueOfArtikles(String room, String name, Integer bottle, Double doseValue) {
+		this.room = room;
+		this.GDID = name;
 		this.bottle = bottle;
 		this.doseValue = doseValue;
 	}
@@ -41,14 +43,18 @@ public class ValueOfArtikles {
 	}
 
 
+	public String getRoom() {
+		return room;
+	}
+
+	public void setRoom(String room) {
+		this.room = room;
+	}
+
 	@Override
 	public String toString() {
-		return  GDID + ", bottle=" + bottle + ", doseValue=" + doseValue;
+		return  room + "- Artikel: " + GDID + " Flashen: " + bottle + " Einheiten: " + doseValue ;
 	}
 
 
-
-
-	
-	
 }
