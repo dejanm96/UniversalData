@@ -24,9 +24,8 @@ public class ReadFullCSV {
 
 		FileInputStream fileInputStream = new FileInputStream(
 				"C:\\Users\\Dejan\\Desktop\\UniversalData\\UniversalData\\CSV\\inventur.csv");
-		@SuppressWarnings("resource")
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
-
+		
 		String line = "";
 		int lines = 0;
 
@@ -54,7 +53,7 @@ public class ReadFullCSV {
 
 			}
 		}
-
+		bufferedReader.close();
 		return anfang;
 	}
 

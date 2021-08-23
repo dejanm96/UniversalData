@@ -46,8 +46,7 @@ public class Endpoint {
 	    modelAndView.setViewName("frontend.html");
 	    return modelAndView;
 	}
-	
-	
+
 	@RequestMapping(value = "/sendMail/", method = RequestMethod.GET, produces = "application/json")
 	public void mailSenden() {
 
