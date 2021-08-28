@@ -15,7 +15,7 @@ public class ArtikelIDListe {
 	}
 	
 	public List<KellnerCSV> getArtikelList() throws IOException {		
-		FileInputStream fileInputStream = new FileInputStream("/root/CSV/kellner.csv");
+		FileInputStream fileInputStream = new FileInputStream("C:\\Users\\micic\\OneDrive\\Desktop\\Abrechnung\\UniversalData\\CSV\\kellner.csv");
 
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
 		

@@ -23,7 +23,7 @@ public class ReadFullCSV {
 		List<ValueOfArtikles> anfang = new ArrayList<>();
 
 		FileInputStream fileInputStream = new FileInputStream(
-				"/root/CSV/inventur.csv");
+				"C:\\Users\\micic\\OneDrive\\Desktop\\Abrechnung\\UniversalData\\CSV\\inventur.csv");
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
 		
 		String line = "";

@@ -40,20 +40,46 @@ public class Endpoint {
 		
 	}
 	
+	@RequestMapping("/hello")
+	public String hello() {
+		return "hey";
+	}
+	
 	@RequestMapping("/")
 	public ModelAndView index () {
 	    ModelAndView modelAndView = new ModelAndView();
 	    modelAndView.setViewName("frontend.html");
 	    return modelAndView;
 	}
+	
+	
+	@RequestMapping("/endstand")
+	public ModelAndView endstand() {
+	    ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.setViewName("endstand.html");
+	    return modelAndView;
+	}
 
-	@RequestMapping(value = "/sendMail/", method = RequestMethod.GET, produces = "application/json")
-	public void mailSenden() {
 
+	@RequestMapping(value = "/sendMail", method = RequestMethod.GET)
+	public String mailSenden() {
+
+		String returnString = "";
+		
 		SendMail send = new SendMail();
 		
-		send.sendMailNow();
+		boolean sent = send.sendMailNow();
+		
+		if(sent)
+			returnString = "Sucessfully sent!";
+		else
+			returnString = "Sending mail failure!";
+		
+		return returnString;		
+		
 	}
+	
+	
 	
 	
 }

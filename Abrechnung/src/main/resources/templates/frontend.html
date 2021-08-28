@@ -17,20 +17,24 @@
   tr:nth-child(even) {
     background-color: #dddddd;
 }
-  </style>
+  </style>	
   
 </head>
 
 <body>
   <div class="container mt-4" id="Abrechnung">
 
-    <table class="table table-bordered" style='overflow-x:scroll; overflow-y:scroll; width:65%; height:100%'>
+    <table class="table table-bordered" style='overflow-x:scroll; overflow-y:scroll; width:100%; height:100%'>
       <thead>
         <tr>
           <th scope="col">BZ</th>
           <th scope="col">Artikel</th>
           <th scope="col">Flasche</th>
           <th scope="col">Einheit</th>
+          <th scope="col">OK</th>
+          <th scope="col">Echt Flaschen</th>
+          <th scope="col">Echt Einheiten</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -39,6 +43,10 @@
           <td>{{ artikel.Artikel }}</td>
           <td>{{ artikel.Flasche }}</td>
           <td>{{ artikel.Einheit }}</td>
+         <td><input type="checkbox"></td>
+         <td><input type="text" size="3"></td>
+         <td><input type="text" size="3"></td>
+        
         </tr>
       </tbody>
     </table>
@@ -51,7 +59,7 @@
         artikelListe: []
       },
       mounted: function() {
-        axios.get('http://localhost:8080/anfang')
+        axios.get('http://12a9fb5.online-server.cloud:443/anfang')
             .then(response => {
               this.artikelListe = response.data;
               console.log(response);

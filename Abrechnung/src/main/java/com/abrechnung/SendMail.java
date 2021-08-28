@@ -21,7 +21,10 @@ public class SendMail {
     final String username = "admin@media-wein.de";
     final String password = "!12Staatsoper34!";
 
-    public void sendMailNow() {
+    public boolean sendMailNow() {
+    	
+    	boolean emailSentSuccess = false;
+    	
 	    Properties props = new Properties();
 	
 	    props.put("mail.smtp.auth", true);
@@ -50,7 +53,7 @@ public class SendMail {
 	
 	        Multipart multipart = new MimeMultipart();
 	        
-	        String file = "C:\\Users\\Dejan\\Desktop\\CSV\\inventur.csv";
+	        String file = "C:\\Users\\micic\\OneDrive\\Desktop\\Abrechnung\\UniversalData\\CSV\\inventur.csv";
 	        String fileName = "inventur.csv";
 	        DataSource source = new FileDataSource(file);
 	        messageBodyPart.setDataHandler(new DataHandler(source));
@@ -62,12 +65,14 @@ public class SendMail {
 	        System.out.println("Sending");
 	
 	        Transport.send(message);
-	
+	        
+	        emailSentSuccess = true;
 	        System.out.println("Done");
-	
+	       
 	    } catch (MessagingException e) {
 	        e.printStackTrace();
 	    }
+	    return emailSentSuccess;
     }
   }
 
