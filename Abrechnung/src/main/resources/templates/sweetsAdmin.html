@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sweets admin uebersicht</title>
+	<!-- Bootstrap CSS 4.3.1 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- VueJS -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<style>
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+
+	<style>
+		.dontShow_row {
+			display: none;
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="container mt-4" id="Sweets4">
+
+		<h3>BUFFET 4</h3>
+
+		<table class="table table-bordered" id='sweets4'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets4">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	
+		<div class="container mt-4" id="Sweets13">
+
+		<h3>BUFFET 13</h3>
+
+
+		<table class="table table-bordered" id='sweets13'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets13">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+<div class="container mt-4" id="Sweets5">
+
+		<h3>BUFFET 5</h3>
+
+
+		<table class="table table-bordered" id='sweets5'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets5">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container mt-4" id="Sweets97">
+
+		<h3>BUFFET 97</h3>
+
+
+		<table class="table table-bordered" id='sweets97'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets97">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container mt-4" id="Sweets6">
+
+		<h3>BUFFET 6</h3>
+
+
+		<table class="table table-bordered" id='sweets6'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets6">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container mt-4" id="Sweets12">
+
+		<h3>BUFFET 12</h3>
+
+
+		<table class="table table-bordered" id='sweets12'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets12">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container mt-4" id="Sweets11">
+
+		<h3>BUFFET 11</h3>
+
+
+		<table class="table table-bordered" id='sweets11'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets11">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container mt-4" id="Sweets99">
+
+		<h3>Besucherzentrum</h3>
+
+
+		<table class="table table-bordered" id='sweets99'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets99">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<script>
+		var sweets4 = new Vue({
+			el: '#Sweets4',
+			data: {
+				sweets4: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/4')
+					.then(response => {
+						this.sweets4 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+		<script>
+		var sweets13 = new Vue({
+			el: '#Sweets13',
+			data: {
+				sweets13: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/13')
+					.then(response => {
+						this.sweets13 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+		<script>
+		var sweets5 = new Vue({
+			el: '#Sweets5',
+			data: {
+				sweets5: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/5')
+					.then(response => {
+						this.sweets5 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+		<script>
+		var sweets97 = new Vue({
+			el: '#Sweets97',
+			data: {
+				sweets97: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/97')
+					.then(response => {
+						this.sweets97 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+		<script>
+		var sweets13 = new Vue({
+			el: '#Sweets6',
+			data: {
+				sweets6: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/6')
+					.then(response => {
+						this.sweets6 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+		<script>
+		var sweets12 = new Vue({
+			el: '#Sweets12',
+			data: {
+				sweets12: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/12')
+					.then(response => {
+						this.sweets12 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+
+
+		<script>
+		var sweets11 = new Vue({
+			el: '#Sweets11',
+			data: {
+				sweets11: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/11')
+					.then(response => {
+						this.sweets11 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+
+		<script>
+		var sweets99 = new Vue({
+			el: '#Sweets99',
+			data: {
+				sweets99: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/99')
+					.then(response => {
+						this.sweets99 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+</body>
+
+</html>

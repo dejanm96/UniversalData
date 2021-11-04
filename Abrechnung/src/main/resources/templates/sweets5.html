@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sweets Buffet 5</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+.center {
+  text-align: center;
+  font-size: large;
+}
+
+.center1 {
+	 text-align: center;
+  margin: auto;
+  width: 100%;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: large;
+}
+.center2 {
+	 text-align: center;
+  margin: auto;
+  width: 100%;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: large;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<form class="center1">
+ <div class="form-group">
+    <label>PF Oper</label> <input type="number" class="form-control" name="oper" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Sacher</label> <input type="number" class="form-control" name="sacher" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Gerstner</label> <input type="number" class="form-control" name="gerstner" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Punchkrapfen</label> <input type="number" class="form-control" name="punchkrapfen" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Pariser Spitz</label> <input type="number" class="form-control" name="pspitz" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Orange</label> <input type="number" class="form-control" name="orange" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Nuss</label> <input type="number" class="form-control" name="nuss" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Pistazie</label> <input type="number" class="form-control" name="pistazie" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>PF Kaffee</label> <input type="number" class="form-control" name="kaffee" placeholder="0">
+  </div>
+<hr style="height:3px; width:100%;text-align:left;margin-left:0">
+  <div class="form-group">
+    <label>Mandelsplitter H</label> <input type="number" class="form-control" name="mandelH" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Mandelsplitter D</label> <input type="number" class="form-control" name="mandelD" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Nougatwürfel</label> <input type="number" class="form-control" name="schach" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Nougat Dressing</label> <input type="number" class="form-control" name="nougat" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Kongo</label> <input type="number" class="form-control" name="kongo" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Mandelschnitte</label> <input type="number" class="form-control" name="mandelschnitte" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Kaffee Konfekt</label> <input type="number" class="form-control" name="kafekonf" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Mozartkugel</label> <input type="number" class="form-control" name="mozart" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Nusskugel</label> <input type="number" class="form-control" name="nusskonf" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Nusshäufchen</label> <input type="number" class="form-control" name="nusshauf" placeholder="0">
+  </div>
+<hr style="height:3px; width:100%;text-align:left;margin-left:0">
+  <div class="form-group">
+    <label>Tiramisu</label> <input type="number" class="form-control" name="tiramisu" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Eclair</label> <input type="number" class="form-control" name="eclair" placeholder="0">
+  </div>
+<hr style="height:3px; width:100%;text-align:left;margin-left:0">
+  <div class="form-group">
+    <label>Sachertorte</label> <input type="number" class="form-control" name="sachertorte" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Estrhazy</label> <input type="number" class="form-control" name="ester" placeholder="0">
+  </div>
+  
+    <hr style="height:3px; width:100%;text-align:left;margin-left:0">
+  <div class="form-group">
+    <label>PF diverse</label> <input type="number" class="form-control" name="pfdiverse" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>Konfekt diverse</label> <input type="number" class="form-control" name="konfdiverse" placeholder="0">
+  </div>
+  
+      <hr style="height:3px; width:100%;text-align:left;margin-left:0">
+  <div class="form-group">
+    <label>Makronen</label> <input type="number" class="form-control" name="macroons" placeholder="0">
+  </div>
+  
+  <div class="form-group">
+   <br> <input type="submit" class="btn btn-primary" name="eingeben" value="Eingeben";>
+  </div>
+  
+</form>
+
+
+
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    const value = Object.fromEntries(data.entries());
+
+ 	console.log(value)
+	postSweets(value);
+	confirm("Sweets sent sucessfully!");
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
+</script>
+
+<script>
+
+function postSweets(value){
+	var url = "http://12a9fb5.online-server.cloud:443/addSweets/5";
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url);
+	
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.onreadystatechange = function () {
+	   if (xhr.readyState === 4) {
+	      console.log(xhr.status);
+	      console.log(xhr.responseText);
+	   }};
+	var data = JSON.stringify(value)
+	xhr.send(data);
+}
+</script>
+</body>
+</html>

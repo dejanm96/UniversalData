@@ -19,11 +19,11 @@ public class ReadFullCSV {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<ValueOfArtikles> readCSVFile() throws NumberFormatException, IOException, ParseException {
+	public List<ValueOfArtikles> readCSVFile(String file) throws NumberFormatException, IOException, ParseException {
 		List<ValueOfArtikles> anfang = new ArrayList<>();
 
 		FileInputStream fileInputStream = new FileInputStream(
-				"/root/CSV/inventur.csv");
+				"/root/CSV/" + file);
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
 		
 		String line = "";

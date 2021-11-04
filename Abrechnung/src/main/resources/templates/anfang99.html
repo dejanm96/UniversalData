@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Abrechnung</title>
+	<!-- Bootstrap CSS 4.3.1 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- VueJS -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<style>
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+
+	<style>
+		.dontShow_row {
+			display: none;
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="container mt-4" id="Abrechnung">
+
+
+
+		<table class="table table-bordered" id='abrechnung'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<div>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz1'><i class="fa fa-external-link" aria-hidden="true">BZ1
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz2'><i class="fa fa-external-link" aria-hidden="true">BZ2
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz3'><i class="fa fa-external-link" aria-hidden="true"> BZ3
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz4'><i class="fa fa-external-link" aria-hidden="true"> BZ4
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz5'><i class="fa fa-external-link" aria-hidden="true"> BZ5
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz6'><i class="fa fa-external-link" aria-hidden="true"> BZ6
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz11'><i class="fa fa-external-link" aria-hidden="true"> BZ11
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz22'><i class="fa fa-external-link" aria-hidden="true"> BZ22
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz33'><i class="fa fa-external-link" aria-hidden="true"> BZ33
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz44'><i class="fa fa-external-link" aria-hidden="true"> BZ44
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bz55'><i class="fa fa-external-link" aria-hidden="true"> BZ55
+				</button>
+				<button style="margin:5px;">
+					<a href="javascript:void(0)" id='bzOffice'><i class="fa fa-external-link" aria-hidden="true"></i> BZ
+						Office
+				</button>
+			</div>
+
+			<thead>
+				<tr>
+					<th scope="col">BZ</th>
+					<th scope="col">Artikel</th>
+					<th scope="col">Flasche</th>
+					<th scope="col">Einheit</th>
+					<th scope="col">OK</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="artikel, index in artikelListe">
+					<td>{{ artikel.BZ }}</td>
+					<td>{{ artikel.Artikel }}</td>
+					<td>{{ artikel.Flasche }}</td>
+					<td>{{ artikel.Einheit }}</td>
+					<td><input type="checkbox"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<script>
+		var abrechnung = new Vue({
+			el: '#Abrechnung',
+			data: {
+				artikelListe: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/anfang/99')
+					.then(response => {
+						this.artikelListe = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+	<script>
+		document.getElementById('bz1').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 1";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz2').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 2";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz3').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 3";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz4').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 4";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz5').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 5";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz6').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 6";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz11').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 11";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz22').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 22";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz33').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 33";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz44').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 44";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bz55').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ 55";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+	</script>
+	<script>
+		document.getElementById('bzOffice').addEventListener('click', function () {
+			table = document.getElementById('abrechnung');
+			tbody = table.querySelector('tbody');
+			tr = tbody.getElementsByTagName('tr');
+			var el = "BZ Office";
+			for (var i = 0; i < tr.length; i++) {
+				if (tr[i].getElementsByTagName('td')[0].innerText == el) {
+					tr[i].classList.remove('dontShow_row')
+				} else {
+					tr[i].classList.add('dontShow_row')
+				}
+			}
+		})
+
+	</script>
+</body>
+
+</html>

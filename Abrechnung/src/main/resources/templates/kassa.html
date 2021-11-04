@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kassa zählen</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+.center {
+  text-align: center;
+  font-size: large;
+}
+
+.center1 {
+	 text-align: center;
+  margin: auto;
+  width: 100%;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: large;
+}
+.center2 {
+	 text-align: center;
+  margin: auto;
+  width: 100%;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: large;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<form class="center1" onsubmit="calculate(); return false;">
+  <div class="form-group">
+    <label>200€</label> <input type="number" class="form-control" name="e200" id="e200" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>100€</label> <input type="number" class="form-control" name="e100" id="e100" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>50€</label> <input type="number" class="form-control" name="e50" id="e50" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>20€</label> <input type="number" class="form-control" name="e20" id="e20" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>10€</label> <input type="number" class="form-control" name="e10" id="e10" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>5€</label> <input type="number" class="form-control" name="e5" id="e5" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>2€</label> <input type="number" class="form-control" name="e2" id="e2" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>1€</label> <input type="number" class="form-control" name="e1" id="e1" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>0,5€</label> <input type="number" class="form-control" name="e0.5" id="e05" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>0,2</label> <input type="number" class="form-control" name="e0.2" id="e02" placeholder="0">
+  </div>
+
+  <div class="form-group">
+    <label>0,1€</label> <input type="number" class="form-control" name="e0.1" id="e01" placeholder="0"> <br>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary" name="ausrechnen" value="Ausrechnen";>
+    <input type="reset" class="btn btn-primary">
+   </div>
+    <div class ="center">
+	<br>	
+  <input type = "number" id = "result">
+  </div>
+</form>
+
+
+
+<script>
+function calculate() {
+var e200 = document.getElementById("e200").value;
+var e100 = document.getElementById("e100").value;
+var e50 = document.getElementById("e50").value;
+var e20 = document.getElementById("e20").value;
+var e10 = document.getElementById("e10").value;
+var e5 = document.getElementById("e5").value;
+var e2 = document.getElementById("e2").value;
+var e1 = document.getElementById("e1").value;
+var e05 = document.getElementById("e05").value;
+var e02 = document.getElementById("e02").value;
+var e01 = document.getElementById("e01").value;
+
+var result = (e200 * 200 + e100 * 100 + e50 * 50 + e20 * 20 + e10 * 10 + e5 * 5 + e2 * 2 + e1 * 1 + e05 * 0.5 + e02 * 0.2 + e01 * 0.1).toFixed(2);
+
+document.getElementById("result").value = result;
+}
+</script>
+
+
+</body>
+</html>
