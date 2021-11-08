@@ -26,11 +26,12 @@
 			display: none;
 		}
 	</style>
-
+<style>.flexWrap { display: flex; }</style>
 
 </head>
 
 <body>
+
 	<div class="container mt-4" id="Sweets4">
 
 		<h3>BUFFET 4</h3>
@@ -76,6 +77,7 @@
 
 	</div>
 
+
 <div class="container mt-4" id="Sweets5">
 
 		<h3>BUFFET 5</h3>
@@ -120,6 +122,29 @@
 		</table>
 
 	</div>
+
+	<div class="container mt-4" id="Sweets2">
+
+		<h3>BUFFET 2</h3>
+
+
+		<table class="table table-bordered" id='sweets2'
+			style='overflow-x:scroll; overflow-y:scroll; width:78%; height:100%'>
+			<thead>
+				<tr>
+					<th scope="col">Sweet</th>
+					<th scope="col">Summe</th>					
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="sweets, index in sweets2">
+					<td>{{ sweets.Name }}</td>
+					<td>{{ sweets.Value }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
 	<div class="container mt-4" id="Sweets6">
 
 		<h3>BUFFET 6</h3>
@@ -142,6 +167,7 @@
 		</table>
 
 	</div>
+
 	<div class="container mt-4" id="Sweets12">
 
 		<h3>BUFFET 12</h3>
@@ -208,6 +234,8 @@
 		</table>
 
 	</div>
+	
+</div>
 
 	<script>
 		var sweets4 = new Vue({
@@ -319,6 +347,26 @@
 				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/12')
 					.then(response => {
 						this.sweets12 = response.data;
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			}
+		})
+
+	</script>
+	
+	<script>
+		var sweets2 = new Vue({
+			el: '#Sweets2',
+			data: {
+				sweets2: []
+			},
+			mounted: function () {
+				axios.get('http://12a9fb5.online-server.cloud:443/getSweets/2')
+					.then(response => {
+						this.sweets2 = response.data;
 						console.log(response);
 					})
 					.catch(error => {

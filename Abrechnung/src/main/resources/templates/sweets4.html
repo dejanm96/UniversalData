@@ -27,14 +27,38 @@
   padding: 10px;
   font-size: large;
 }
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
 
 </style>
 </head>
 
 <body>
-
 <form class="center1">
+<button type="button" class="collapsible">Petitfour</button>
+<div class="content">
  <div class="form-group">
     <label>PF Oper</label> <input type="number" class="form-control" name="oper" placeholder="0">
   </div>
@@ -71,6 +95,9 @@
     <label>PF Kaffee</label> <input type="number" class="form-control" name="kaffee" placeholder="0">
   </div>
 <hr style="height:3px; width:100%;text-align:left;margin-left:0">
+</div>
+<button type="button" class="collapsible">Konfekt</button>
+<div class="content">
   <div class="form-group">
     <label>Mandelsplitter H</label> <input type="number" class="form-control" name="mandelH" placeholder="0">
   </div>
@@ -111,6 +138,9 @@
     <label>Nusshäufchen</label> <input type="number" class="form-control" name="nusshauf" placeholder="0">
   </div>
 <hr style="height:3px; width:100%;text-align:left;margin-left:0">
+</div>
+<button type="button" class="collapsible">Torten und CO</button>
+<div class="content">
   <div class="form-group">
     <label>Tiramisu</label> <input type="number" class="form-control" name="tiramisu" placeholder="0">
   </div>
@@ -140,14 +170,29 @@
   <div class="form-group">
     <label>Makronen</label> <input type="number" class="form-control" name="macroons" placeholder="0">
   </div>
-  
+</div>
   <div class="form-group">
    <br> <input type="submit" class="btn btn-primary" name="eingeben" value="Eingeben";>
   </div>
   
 </form>
 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 <script>
 function handleSubmit(event) {

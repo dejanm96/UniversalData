@@ -118,6 +118,9 @@ public class Endpoint {
 		case 97:
 		    modelAndView.setViewName("welcome97.html");
 			break;
+		case 2:
+		    modelAndView.setViewName("welcome2.html");
+			break;
 		case 6:
 		    modelAndView.setViewName("welcome6.html");
 			break;
@@ -148,6 +151,9 @@ public class Endpoint {
 			modelAndView.setViewName("notDoneYet.html");
 			break;
 		case 97:
+			modelAndView.setViewName("notDoneYet.html");
+			break;
+		case 2:
 			modelAndView.setViewName("notDoneYet.html");
 			break;
 		case 12:
@@ -183,6 +189,9 @@ public class Endpoint {
 			modelAndView.setViewName("notDoneYet.html");
 			break;
 		case 97:
+			modelAndView.setViewName("notDoneYet.html");
+			break;
+		case 2:
 			modelAndView.setViewName("notDoneYet.html");
 			break;
 		case 12:
@@ -223,6 +232,8 @@ public class Endpoint {
 	    	modelAndView.setViewName("sweets5.html");
 	    if(number == 97)
 	    	modelAndView.setViewName("sweets97.html");
+	    if(number == 2)
+	    	modelAndView.setViewName("sweets2.html");
 	    if(number == 6)
 	    	modelAndView.setViewName("sweets6.html");
 	    if(number == 12)
