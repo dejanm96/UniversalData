@@ -250,7 +250,10 @@ public class Endpoint {
 	@PostMapping(value = "/addSweets/{number}", consumes = "application/json", produces = "application/json")
 	@ResponseBody
 	public void createProduct(@RequestBody Sweets sweets, @PathVariable Integer number) {
-		db.addSweetsToBuffet(number, sweets);
+		if(!db.buffetHasSweets(number))
+			db.addSweetsToBuffet(number, sweets);
+		else
+			db.updateSweetsForBuffet(sweets, number);
 	}
 	
 	@CrossOrigin
@@ -261,6 +264,15 @@ public class Endpoint {
 		if(sweets == null)
 			sweets = new Sweets();
 		return sweets.getArray(number);
+	}
+	
+	@CrossOrigin
+	@RequestMapping(value = "/removeEntry/{number}", method = RequestMethod.GET)
+	@ResponseBody
+	public String removeEntry(@PathVariable Integer number) {
+		db.clearDbForOneBuffet(number);
+		return "<html>\n" + "<header><title>Geloescht</title></header>\n" +
+		          "<body>\n" + "Zurück drücken und wieder eingeben!\n" + "</body>\n" + "</html>";
 	}
 
 	@RequestMapping(value = "/sendMail", method = RequestMethod.GET)

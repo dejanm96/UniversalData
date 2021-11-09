@@ -12,6 +12,7 @@ public class Sweets {
 	private Integer tiramisu = 0, eclair = 0, sachertorte = 0, ester = 0;
 	private Integer pfdiverse = 0, konfdiverse = 0;		
 	private Integer macroons = 0;
+	private Integer erdbeere = 0, maroniD = 0, maroniH = 0;
 	
 	public Sweets() {
 		
@@ -192,6 +193,29 @@ public class Sweets {
 		this.macroons = checkIfNull(macroons);
 	}
 	
+	public Integer getErdbeere() {
+		return erdbeere;
+	}
+
+	public void setErdbeere(Integer erdbeere) {
+		this.erdbeere = checkIfNull(erdbeere);
+	}
+	
+	public Integer getMaroniD() {
+		return maroniD;
+	}
+
+	public void setMaroniD(Integer maroniD) {
+		this.maroniD = checkIfNull(maroniD);
+	}
+	
+	public Integer getMaroniH() {
+		return maroniH;
+	}
+
+	public void setMaroniH(Integer maroniH) {
+		this.maroniH = checkIfNull(maroniH);
+	}
 	
 	private Integer checkIfNull(Integer value) {
 		if(value == null)
@@ -279,6 +303,15 @@ public class Sweets {
 
 		
 		if(getMacroons() > 0) array.put(addJsonObject("Makronen", getMacroons()));
+		
+		
+		if(getErdbeere() > 0) array.put(addJsonObject("Erdbeere", getErdbeere()));
+		
+		
+		if(getMaroniD() > 0) array.put(addJsonObject("Maroni Dunkel", getMaroniD()));
+		
+		
+		if(getMaroniH() > 0) array.put(addJsonObject("Maroni Hell", getMaroniH()));
 		
 		return array.toString();
 	}
